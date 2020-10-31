@@ -116,10 +116,10 @@ body {
   padding:  1.5em 1em  3em; 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5em;
+  grid-gap: 0.75em;
 
   .list {
-    height: 120px;
+    height: 6.25em;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -331,9 +331,9 @@ body {
       width: 190px;
     }
   }
-  .listView .list {
-    height: 90px;
-  }
+  // .listView .list {
+  //   height: 70px;
+  // }
 }
 
 @media all and (max-width:550px) {
