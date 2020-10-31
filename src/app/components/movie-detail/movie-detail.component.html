@@ -1,0 +1,77 @@
+<div style="padding-top: 2em; margin: 0 1em;">
+  <div class="button" routerLink="/home"><span><i class="fa fa-chevron-left"></i> Back</span></div>
+  <ng-container *ngIf="this.videoResults.length !== 0; else withPosterImage">
+    <div class="layoutWithVideo" *ngIf="selectedMovie">
+      <div class="youtube">
+        <iframe width="100%" height="100%" frameborder="0" allowfullscreen include [src]="movieVideoUrl | safeUrl">
+        </iframe>
+      </div>
+      <div class="info">
+        <h2>{{ selectedMovie.title }} <span>({{selectedMovie.release_date | date: 'yyyy'}})</span></h2>
+        <p><span>Release date: </span>{{selectedMovie.release_date | date: 'mediumDate'}}</p>
+        <p><span>Vote average: </span><i class="fa fa-star"></i>{{selectedMovie.vote_average}}</p>
+        <p class="overview">Overview:</p>
+        <p style="margin: 0;">{{ selectedMovie.overview }}</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #withPosterImage>
+    <div *ngIf="selectedMovie" class="layoutWithImage">
+      <div class="imageFrame">
+        <img *ngIf="selectedMovie.poster_path === null; else image" src="assets/images/not-found-wide.png" alt="">
+        <ng-template #image>
+          <img src="https://image.tmdb.org/t/p/w185{{selectedMovie.poster_path}}" alt="">
+        </ng-template>
+      </div>
+      <div class="info">
+        <h2>{{ selectedMovie.title }} <span>({{selectedMovie.release_date | date: 'yyyy'}})</span></h2>
+        <p><span>Release date: </span>{{selectedMovie.release_date | date: 'mediumDate'}}</p>
+        <p><span>Vote average: </span><i class="fa fa-star"></i>{{selectedMovie.vote_average}}</p>
+        <p class="overview">Overview:</p>
+        <p style="margin: 0;">{{ selectedMovie.overview }}</p>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card" *ngIf="selectedMovie">
+  
+  <div style="margin: 0 auto; text-align: center; height: 470px;overflow: hidden; display: flex; flex-direction: column;">
+      <img  style="width: 100%;" *ngIf="selectedMovie.poster_path === null; else image"
+      src="assets/images/not-found.png" alt="">
+      <ng-template #image>
+        <img  style="width: 100%; justify-content: center; align-self: center;" 
+          src="https://image.tmdb.org/t/p/w185{{selectedMovie.poster_path}}" alt="">
+      </ng-template>
+  </div>
+  <div class="title">
+    <a style="font-weight: normal;" >{{selectedMovie.title}}</a>
+
+    <p><i class="fa fa-star"></i>{{selectedMovie.vote_average}}</p>
+  </div>
+</div>
+
+<div style="width: 50%; height: 50vh; overflow: hidden; border-radius: 20px;">
+
+  <iframe width="100%" height="100%" *ngIf="movieVideo" frameborder="0" allowfullscreen include
+  [src]="movieVideo | safeUrl" >
+  </iframe>
+  
+</div> -->

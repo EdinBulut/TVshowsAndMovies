@@ -1,0 +1,43 @@
+<div class="galleryView" *ngIf="galleryOrListView === 'gallery'">
+  <div *ngFor="let movie of movies">
+    <div class="card">
+      <div class="img-wrapper" (click)='toMovieDetail(movie.id)'>
+        <img *ngIf="movie.poster_path === null; else image" src="assets/images/not-found.png" alt="">
+        <ng-template #image>
+          <img src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" alt="">
+        </ng-template>
+      </div>
+      <div class="title">
+        <a (click)='toMovieDetail(movie.id)' *ngIf="this.searchedItem.length < 3; else searched">{{movie.title}}</a>
+        <ng-template #searched>
+          <a (click)='toMovieDetail(movie.id)' innerHTML='{{ movie.title | highlightText : this.searchedItem }}'></a>
+        </ng-template>
+        <p><i class="fa fa-star"></i>{{movie.vote_average}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="listView" *ngIf="galleryOrListView === 'list'">
+  <ng-container *ngFor="let movie of movies">
+    <div class="list">
+      <div class="img-wrapper-2" (click)='toMovieDetail(movie.id)'>
+        <img *ngIf="movie.poster_path === null; else image" src="assets/images/not-found.png" alt="">
+        <ng-template #image>
+          <img src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" alt="">
+        </ng-template>
+      </div>
+      <div class="title-2">
+        <a (click)='toMovieDetail(movie.id)' *ngIf="this.searchedItem.length < 3; else searched">{{movie.title}}</a>
+        <ng-template #searched>
+          <a (click)='toMovieDetail(movie.id)' innerHTML='{{ movie.title | highlightText: this.searchedItem }}'></a>
+        </ng-template>
+        <p><span><i class="fa fa-star"></i></span>{{movie.vote_average}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<a class="more-results" (click)="moreMovies()" *ngIf="this.searchedItem.length >= 3 && this.page < this.totalPages">
+  show more results for <span>{{searchedItem}}</span>
+</a>

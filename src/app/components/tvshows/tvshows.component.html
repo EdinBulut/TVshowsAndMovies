@@ -1,0 +1,44 @@
+<div class="galleryView" *ngIf="galleryOrListView === 'gallery'">
+  <div *ngFor="let tvshow of tvshows">
+    <div class="card">
+      <div class="img-wrapper" (click)='toTvshowDetail(tvshow.id)'>
+        <img *ngIf="tvshow.poster_path === null; else image" src="assets/images/not-found.png" alt="">
+        <ng-template #image>
+          <img src="https://image.tmdb.org/t/p/w185{{tvshow.poster_path}}" alt="">
+        </ng-template>
+      </div>
+      <div class="title">
+        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">{{tvshow.name}}</a>
+        <ng-template #searched>
+          <a (click)='toTvshowDetail(tvshow.id)' innerHTML='{{ tvshow.name | highlightText : this.searchedItem }}'></a>
+        </ng-template>
+        <p><i class="fa fa-star"></i>{{tvshow.vote_average}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="listView" *ngIf="galleryOrListView === 'list'">
+  <ng-container *ngFor="let tvshow of tvshows">
+    <div class="list">
+      <div class="img-wrapper-2" (click)='toTvshowDetail(tvshow.id)'>
+        <img *ngIf="tvshow.poster_path === null; else image" src="assets/images/not-found.png" alt="">
+        <ng-template #image>
+          <img src="https://image.tmdb.org/t/p/w185{{tvshow.poster_path}}" alt="">
+        </ng-template>
+      </div>
+      <div class="title-2">
+        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">{{tvshow.name}}</a>
+        <ng-template #searched>
+          <a (click)='toTvshowDetail(tvshow.id)' innerHTML='{{ tvshow.name | highlightText: this.searchedItem }}'></a>
+        </ng-template>
+        <p><span><i class="fa fa-star"></i></span>{{tvshow.vote_average}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<a class="more-results" (click)="moreTvshows()"
+  *ngIf="this.searchedItem.length >= 3 && this.page < this.tvshowsTotalPages">
+  show more results for <span>{{searchedItem}}</span>
+</a>

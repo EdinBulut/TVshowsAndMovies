@@ -1,0 +1,17 @@
+a.more-results {
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-decoration: underline;
+  color: gray;
+  padding: 1em;
+  padding-bottom: 3em;
+
+  &:hover {
+    color: #2980b9;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
