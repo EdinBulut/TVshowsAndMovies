@@ -8,9 +8,13 @@
         </ng-template>
       </div>
       <div class="title">
-        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">{{tvshow.name}}</a>
+        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">
+          {{ (tvshow.name.length>35)? (tvshow.name | slice:0:35)+'..':(tvshow.name) }}
+        </a>
         <ng-template #searched>
-          <a (click)='toTvshowDetail(tvshow.id)' innerHTML='{{ tvshow.name | highlightText : this.searchedItem }}'></a>
+          <a (click)='toTvshowDetail(tvshow.id)'
+            innerHTML="{{ (tvshow.name.length>35)? (tvshow.name | slice:0:35)+'..':(tvshow.name) | highlightText : this.searchedItem }}">
+          </a>
         </ng-template>
         <p><i class="fa fa-star"></i>{{tvshow.vote_average}}</p>
       </div>
@@ -28,9 +32,14 @@
         </ng-template>
       </div>
       <div class="title-2">
-        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">{{tvshow.name}}</a>
+        <a (click)='toTvshowDetail(tvshow.id)' *ngIf="this.searchedItem.length < 3; else searched">
+          <!-- {{tvshow.name}} -->
+          {{ tvshow.name }}
+        </a>
         <ng-template #searched>
-          <a (click)='toTvshowDetail(tvshow.id)' innerHTML='{{ tvshow.name | highlightText: this.searchedItem }}'></a>
+          <a (click)='toTvshowDetail(tvshow.id)'
+            innerHTML="{{ tvshow.name | highlightText : this.searchedItem }}">
+          </a>
         </ng-template>
         <p><span><i class="fa fa-star"></i></span>{{tvshow.vote_average}}</p>
       </div>

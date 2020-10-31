@@ -8,9 +8,13 @@
         </ng-template>
       </div>
       <div class="title">
-        <a (click)='toMovieDetail(movie.id)' *ngIf="this.searchedItem.length < 3; else searched">{{movie.title}}</a>
+        <a (click)='toMovieDetail(movie.id)' *ngIf="this.searchedItem.length < 3; else searched">
+          {{ (movie.title.length>35)? (movie.title | slice:0:35)+'..':(movie.title) }}
+        </a>
         <ng-template #searched>
-          <a (click)='toMovieDetail(movie.id)' innerHTML='{{ movie.title | highlightText : this.searchedItem }}'></a>
+          <a (click)='toMovieDetail(movie.id)'
+          innerHTML="{{ (movie.title.length>35)? (movie.title | slice:0:35)+'..':(movie.title) | highlightText : this.searchedItem }}">
+        </a>
         </ng-template>
         <p><i class="fa fa-star"></i>{{movie.vote_average}}</p>
       </div>
