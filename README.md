@@ -24,7 +24,7 @@ App is deployed on firebase.
 
 
 
-# About app
+## About app
 
 When the app loads, the TV SHOWS tab is selected.
 Clicking on a tab loads the top 10 MOVIES/TV SHOWS depending on the selected tab.
