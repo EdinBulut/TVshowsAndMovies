@@ -19,13 +19,17 @@
 
 .search-icon {
   position: absolute;
-  top: -.28em;
+  // top: -.28em;
   width: 3em;
-  line-height: 3em;
+  // line-height: 3em;
   text-align: center;
   color: whitesmoke;
-  left: 0;
+  // left: 0;
   font-size: 1.22em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-input {
