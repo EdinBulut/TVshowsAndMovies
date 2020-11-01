@@ -19,14 +19,12 @@
 
 .search-icon {
   position: absolute;
-  // top: -.28em;
   width: 3em;
-  // line-height: 3em;
   text-align: center;
   color: whitesmoke;
-  // left: 0;
   font-size: 1.22em;
   height: 100%;
+  padding-bottom: 0.1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +38,7 @@
   height: 100%;
   border: none;
   background: rgba(255, 255, 255, 0) !important;
-  padding-left: 3.75em;
+  padding-left: 2.75em;
   font-size: 1.32em;
   font-weight: 400;
   outline: none;
