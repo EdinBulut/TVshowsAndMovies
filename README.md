@@ -7,20 +7,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Find in terminal folder where you want to download this app and
 run `git clone https://github.com/EdinBulut/TVshowsAndMovies.git`
 
-(.../SELECTED_FOLDER> git clone https://github.com/EdinBulut/TVshowsAndMovies.git)
+`(.../SELECTED_FOLDER> git clone https://github.com/EdinBulut/TVshowsAndMovies.git)`
 
 
 2. In SELECTED_FOLDER you will get project folder TVshowsAndMovies. Navigate to project folder and
 run `npm install` to install node_modules
 
-(.../SELECTED_FOLDER/TVshowsAndMovies> npm install)
+`(.../SELECTED_FOLDER/TVshowsAndMovies> npm install)`
 
 
 3. When second step is finished then in the same folder you have to
 run `ng serve` and when dev server is listening on localhost:4200 navigate to `http://localhost:4200/`
 or run `ng serve --o` to automatically open `http://localhost:4200/` when app is ready
 
-(.../SELECTED_FOLDER/TVshowsAndMovies> ng serve --o)
+`(.../SELECTED_FOLDER/TVshowsAndMovies> ng serve --o)`
 
 
 If you have done these three simple steps correctly when you open your browser on `http://localhost:4200/`
