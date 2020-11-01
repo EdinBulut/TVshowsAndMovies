@@ -1,4 +1,4 @@
-# TV Shows And Movies
+# TV Shows And Movies (https://tvshowsandmovies-5d3ba.web.app)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
@@ -50,8 +50,10 @@ User can be taken to the details view if he navigate to `http://localhost:4200/m
 The Detailed View of the Movie/TV Show shows the cover image and in case of Movies/TV Shows which have a trailer should show the trailer video instead of the cover image. 
 Next to/below the image/trailer some basic information regarding the selected Movie/TV Show are shown.
 
-The Back Button return the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show
+The Back button return the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show
 (meaning that the correct tab is selected and if the user came from search - the search result with the search term is there).
+
+If user navigate to page that doesn't exist 'Page not found' will be shown.
 
 
 
