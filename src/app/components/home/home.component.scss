@@ -19,7 +19,7 @@
 
 .search-icon {
   position: absolute;
-  top: -.25em;
+  top: -.28em;
   width: 3em;
   line-height: 3em;
   text-align: center;
@@ -59,6 +59,7 @@
   height: 2em;
   span {
     font-size: 1em;
-    line-height: 2.15em;
+    padding-top: 0.1em;
+    // line-height: 2.15em;
   }
 }
